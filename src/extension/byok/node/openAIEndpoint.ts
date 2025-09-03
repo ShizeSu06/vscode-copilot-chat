@@ -147,6 +147,12 @@ export class OpenAIEndpoint extends ChatEndpoint {
 		} else {
 			headers['Authorization'] = `Bearer ${this._apiKey}`;
 		}
+		if (this.name === 'mix16-arm4-s100-tap') {
+			headers['SERVICE_URL'] = "http://shizs-orange-tap-0-svc-8000.shizs.svc.cluster.local:8000"; //"http://shizs-orange-tap-0-svc-8000.shizs.svc.cluster.local:8000"; //"http://bus-o4-15-model-0-svc-8009.swang.svc.cluster.local:8009"; //"http://orange-tap-0-svc-8000.piyushmadan.svc.cluster.local:8000";
+			headers['X-Bus-User'] = "evaluation";
+			headers['X-Bus-Snapshot'] = "az://orngscuscresco/twapi/mini/e/damajercak-mix16-arm-4-pdw2-ev3-mixed-itc-spi32-gpt5-mini-sft-1e-4-469-100steps-tef03-5-tpm1-rm-lr1e-5-run-20250813-072230/policy/step_000100/";
+			headers['X-Bus-Renderer'] = "harmony_v4.0.16_berry_v3_1mil_orion_no_budget_commentary_cs_cross_msg_msc/128";
+		}
 		return headers;
 	}
 

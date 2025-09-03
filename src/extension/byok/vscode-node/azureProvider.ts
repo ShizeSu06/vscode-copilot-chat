@@ -30,7 +30,9 @@ export function resolveAzureUrl(modelId: string, url: string): string {
 	} else if (url.includes('openai.azure.com')) {
 		return `${url}/openai/deployments/${modelId}/chat/completions?api-version=2025-01-01-preview`;
 	} else {
-		throw new Error(`Unrecognized Azure deployment URL: ${url}`);
+		//return `${url}/chat/completions`;
+		return `${url}`;
+		//throw new Error(`Unrecognized Azure deployment URL: ${url}`);
 	}
 }
 
